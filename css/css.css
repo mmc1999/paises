@@ -1,0 +1,213 @@
+html {
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+.divError {
+    width: 100%;
+    background-color: red;
+    height: 50px;
+    display: none;
+}
+.mensajeError {
+    color: white;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+.logo {
+    font-weight: 800;
+}
+.divDark {
+    display: flex;
+    flex-direction: row;
+}
+.iconoLuna {
+    width: 18px;
+    margin-right: 5px;
+}
+.parrafoDark {
+    font-weight: 600;
+}
+
+main {
+    background-color: #F5F5F5;
+    box-shadow: 0px -2px rgb(150, 150, 150);
+    padding: 0px 20px;
+}
+.divInput {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.divInput::before {
+    content: url('../imagenes/search-outline.svg');
+    display:block;
+    width: 20px;
+    height:20px;
+    position:absolute;
+    left: 8%;
+    top: 20%;
+}
+.input {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 30px 0px;
+    padding: 20px 0px 20px 17%;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 4px 1px rgba(216, 216, 216, 0.9);
+}
+::placeholder {
+    color: rgba(216, 216, 216, 0.7);
+    font-size: 17px;
+}
+.divFiltrador {
+    position: relative;
+    width: 220px;
+    padding: 20px;
+    margin-bottom: 50px;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 1px rgba(216, 216, 216, 0.9);
+    cursor: pointer;
+    outline: none;
+}
+.divFiltrador::before {
+    content: url('../imagenes/caret-down-outline.svg');
+    display:block;
+    width: 18px;
+    position:absolute;
+    left: 90%;
+    top: 38%;
+}
+
+.menuDesplegable {
+    display: none;
+    
+}
+ul {
+    position: absolute;
+    width: 220px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    top: 100%;
+    left: 0%;
+    padding: 20px;
+    box-shadow: 2px 2px 4px 1px rgba(143, 143, 143, 0.9);
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+li {
+    list-style: none;
+    margin: 5px 0px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.divPaises {
+    display: grid;
+    grid-gap: 50px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    margin: 0%;
+    padding: 0%;
+}
+.claseParaEldiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    border-radius:15px;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    -ms-border-radius:15px;
+    -o-border-radius:15px;
+    padding-bottom: 20px;
+}
+.claseParaLaImagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /*NO SE QUE VERGA ES ESTO AVERIGUAR*/
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15Px;
+    margin-bottom: 10px;
+}
+.claseParaLosP {
+    margin: 0%;
+    padding: 4px 15px;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 500px) {
+    .divPaises {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 760px) {
+    .divInput {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .divInput::before {
+        content: url('../imagenes/search-outline.svg');
+        display:block;
+        width: 20px;
+        height:20px;
+        position:absolute;
+        left: 20px;
+        top: 40%;
+    }
+    .input {
+        width: 350px;
+        padding: 20px 0px 20px 50px;
+    }
+    .divFiltrador {
+        margin-bottom: 0px;
+    }
+    .divPaises {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 950px) {
+    .divPaises {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1150px) {
+    .divPaises {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    }
+}
