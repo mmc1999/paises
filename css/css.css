@@ -1,7 +1,9 @@
 html {
     box-sizing: border-box;
 }
-
+.loader {
+    background-color: black;
+}
 *::after,
 *::before {
     box-sizing: inherit;
@@ -21,6 +23,12 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     padding: 0%;
     margin: 0%;
+    overflow-x: hidden;
+}
+.modoDark {
+    background-color: black;
+    color: white;
+    transition: all 1000ms ease;
 }
 
 header {
@@ -34,6 +42,7 @@ header {
 .divDark {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 .iconoLuna {
     width: 18px;
@@ -91,8 +100,9 @@ main {
     border-radius: 10px;
     background-color: white;
     box-shadow: 2px 2px 4px 1px rgba(216, 216, 216, 0.9);
-    cursor: pointer;
-    outline: none;
+    outline: none; 
+    cursor:pointer;
+    
 }
 .divFiltrador::before {
     content: url('../imagenes/caret-down-outline.svg');
@@ -105,8 +115,9 @@ main {
 
 .menuDesplegable {
     display: none;
-    
+    cursor: auto;
 }
+
 ul {
     position: absolute;
     width: 220px;
@@ -137,9 +148,15 @@ li {
     grid-gap: 50px;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: row dense;
     margin: 0%;
     padding: 0%;
+}
+
+.enlaceImagen {
+    display: block;
+    width: 100%;
 }
 .claseParaEldiv {
     display: flex;
@@ -147,12 +164,16 @@ li {
     justify-content: center;
     align-items: flex-start;
     background-color: white;
+    color: black;
+    width: 100%;
     border-radius:15px;
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
     -ms-border-radius:15px;
     -o-border-radius:15px;
     padding-bottom: 20px;
+    transition: all 500ms ease-in-out;
+    box-sizing: border-box;
 }
 .claseParaLaImagen {
     width: 100%;
@@ -162,17 +183,22 @@ li {
     border-top-right-radius: 15Px;
     margin-bottom: 10px;
 }
+.claseParaEldiv:hover {
+    transform:scale(1.1);
+    transition: all 500ms ease;
+}
 .claseParaLosP {
     margin: 0%;
     padding: 4px 15px;
     font-size: 15px;
 }
 
-@media screen and (min-width: 500px) {
-    .divPaises {
-        grid-template-columns: 1fr 1fr;
-    }
+.filter {
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
 }
+
 @media screen and (min-width: 760px) {
     .divInput {
         display: flex;
@@ -197,17 +223,11 @@ li {
     .divFiltrador {
         margin-bottom: 0px;
     }
-    .divPaises {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media screen and (min-width: 950px) {
-    .divPaises {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-@media screen and (min-width: 1150px) {
-    .divPaises {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    /*.claseParaEldiv {
+        width: 200px;
+    }*/
+    .claseParaLosP h3{
+        margin: 0%;
+
     }
 }
